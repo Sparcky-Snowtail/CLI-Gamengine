@@ -1,11 +1,23 @@
 public class CLIIcon
 {
-    public static double errors { get; set; } = 0;
+    
 
-
-    public static void rerror()
+    public static string folder()
     {
-        errors++;
+        string x = "";
+        if (CLISettings.Icons == 1)
+        {
+            x = " ";
+        }
+        else if (CLISettings.Icons == 2)
+        {
+            x = "📁";
+        }
+        return x;
+    }
+    public static void error()
+    {
+
     }
     public static string Warn()
     {

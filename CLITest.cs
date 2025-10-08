@@ -4,7 +4,7 @@ public class CLITest
     {
         int selectedIndex = 0;
         string[] options = { "New Game", "Load Game", "Options", "Exit" };
-
+        bool fist = true;
         while (CLISettings.mainMenuOpen)
         {
             if (!CLISettings.Debug)
@@ -15,44 +15,55 @@ public class CLITest
             CLIConfig.bootlogo();
 
             Console.ForegroundColor = CLISettings.Dmcolor;
-            Console.WriteLine("=====menu=====");
+            
+            //Console.WriteLine("=====menu=====");
             //Console.ResetColor();
             int speed = 50;
             bool fistTime = true;
 
-            for (int i = 0; i < options.Length; i++)
+            if (fist == true)
             {
-                if (i == selectedIndex)
-                {
-                    if (options[i] == "Exit")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                    }
-                    else
-                    {
-                        Console.ForegroundColor = CLISettings.Mcolor;
-                    }
-                    CLIText.print("→ ", speed, false);
-                    speed = 50;
-                }
-                else
-                {
-                    if (fistTime)
-                    {
-                        speed = 50;
-                        if (i == options.Length) { fistTime = false; }
-                    }
-                    else
-                    {
-                        speed = 0;
-                    }
-                    Console.ResetColor();
-                    Console.ForegroundColor = CLISettings.Dmcolor;
-                }
-
-                Console.WriteLine(options[i]);
-                Console.ResetColor();
+                CLIText.print("=====menu=====", speed, true);
+                fist = false;
             }
+            else
+            {
+                Console.WriteLine("=====menu=====");
+            }
+            
+            for (int i = 0; i < options.Length; i++)
+                {
+                    if (i == selectedIndex)
+                    {
+                        if (options[i] == "Exit")
+                        {
+                            Console.ForegroundColor = ConsoleColor.Red;
+                        }
+                        else
+                        {
+                            Console.ForegroundColor = CLISettings.Mcolor;
+                        }
+                        CLIText.print("→ ", speed, false);
+                        speed = 50;
+                    }
+                    else
+                    {
+                        if (fistTime)
+                        {
+                            speed = 50;
+                            if (i == options.Length) { fistTime = false; }
+                        }
+                        else
+                        {
+                            speed = 0;
+                        }
+                        Console.ResetColor();
+                        Console.ForegroundColor = CLISettings.Dmcolor;
+                    }
+
+                    Console.WriteLine(options[i]);
+                    Console.ResetColor();
+                }
 
             ConsoleKeyInfo keyInfo = Console.ReadKey(true);
             switch (keyInfo.Key)
@@ -99,6 +110,8 @@ public class CLITest
             Console.ForegroundColor = CLISettings.Mcolor;
             Console.WriteLine("===newgame====");
             Console.ResetColor();
+            int speed = 0;//25;
+            bool fistTime = true;
 
             for (int i = 0; i < options.Length; i++)
             {
@@ -110,27 +123,31 @@ public class CLITest
                     }
                     else if (options[i] == "Exit")
                     {
+
+                            fistTime = false; 
                         Console.ForegroundColor = ConsoleColor.Red;
                     }
                     else
                     {
                         Console.ForegroundColor = CLISettings.Mcolor;
                     }
+                    speed = 25;
                     Console.Write("→ ");
                 }
                 else
                 {
+                    speed = 0;
                     Console.ResetColor();
                     Console.ForegroundColor = CLISettings.Dmcolor;
                 }
                 if (options[i] != "Unlock")
                 {
-                    CLIText.print(options[i], 15, true);
+                    CLIText.print(options[i], speed, true);
                     //Console.WriteLine(options[i]);
                 }
                 else if (CLIPlayer.canEditName == false)
                 {
-                    CLIText.print(options[i], 25, true);
+                    CLIText.print(options[i], speed, true);
                     //Console.WriteLine(options[i]);
                 }
                 Console.ResetColor();
@@ -221,6 +238,8 @@ public class CLITest
             // Clear the console and display the menu header
             Console.Clear();
             Console.ForegroundColor = CLISettings.Mcolor;
+            int speed = 0;//25;
+            bool fistTime = true;
             Console.WriteLine("==== Options ====");
             Console.ResetColor();
 
@@ -237,13 +256,17 @@ public class CLITest
                     {
                         Console.ForegroundColor = CLISettings.Mcolor;
                     }
-                    Console.Write("→ ");
+                    //Console.Write("→ ");
+                    speed = 25;
+                    CLIText.print("→ ",speed,false);
                 }
                 else
                 {
+                    speed = 0;
                     Console.ForegroundColor = CLISettings.Dmcolor;
                 }
-                Console.WriteLine(options[i]);
+                CLIText.print(options[i],speed,true);
+                //Console.WriteLine(options[i]);
                 Console.ResetColor();
             }
 
@@ -295,16 +318,20 @@ public class CLITest
         int index = 0;
         while (true)
         {
+            int speed = 0;//25;
+            bool fistTime = true;
             Console.Clear();
             for (int i = 0; i < colors.Length; i++)
             {
                 if (i == index)
                 {
                     Console.ForegroundColor = colorsEnum[i];
-                    Console.Write("→ "); // Add arrow for selected item
+                    speed = 25;
+                    CLIText.print("→ ",speed,false);
                 }
                 else
                 {
+                    speed = 0;
                     Console.ForegroundColor = CLISettings.Dmcolor;
                 }
                 Console.WriteLine($"{colors[i]}");
@@ -402,12 +429,12 @@ public class CLITest
                     if (CLISettings.Icons == 1)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Icons:  MesloLGS-NF(FONT)");
+                        Console.WriteLine($"Icons: {CLIIcon.folder()} NERD_FONT");
                     }
                     else if (CLISettings.Icons == 2)
                     {
                         Console.ForegroundColor = ConsoleColor.Green;
-                        Console.WriteLine("Icons: 📂 Emojis + Emoticon");
+                        Console.WriteLine($"Icons: {CLIIcon.folder()} Emojis + Emoticon");
                     }
                     else
                     {
@@ -447,6 +474,7 @@ public class CLITest
                             return;
                         case 3:
                             CLISettings.Icons = (CLISettings.Icons == 1) ? 2 : (CLISettings.Icons == 2) ? 0 : 1;
+                            CLIConfig.Advancedoptions();
                             return;
                         case 4:
                             CLIConfig.options();
