@@ -1,6 +1,6 @@
 ![1733930022773](images/README/1733930022773.png)
 
-CLI Gamengine CLI Game Engine is a text-based game engine coded in C# using .NET 8. It is currently compatible with macOS 10.15 and up, Linux, and Windows 7 and up.
+CLI Gamengine CLI Game Engine is a text-based game engine coded in C# using .NET 9. It is currently compatible with macOS 10.15 and up, Linux, and Windows 7 and up.
 
 ## Features
 
@@ -12,7 +12,7 @@ CLI Gamengine CLI Game Engine is a text-based game engine coded in C# using .NET
 ### Clone the Repository:
 
 ```
-git clone https://github.com/Sparcky2257/CLI-Gamengine.git
+git clone https://github.com/Sparcky-Snowtail/CLI-Gamengine.git
 ```
 
 ### Navigate to the Project Directory:
@@ -40,7 +40,6 @@ Ensure you have the .NET 9 SDK installed on your machine for V A.5.0 and up.
 ##### **.NET** 8 SDK:
 
 Ensure you have the .NET 8 SDK installed on your machine for V T-A.5.0 and below.
-
 
 ContributingFeel free to submit issues or pull requests. Contributions are welcome!
 

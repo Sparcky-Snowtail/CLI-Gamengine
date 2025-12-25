@@ -52,7 +52,7 @@ public class SGCLI
             ClIMiscellaneous.Creditsdata.Add("MC");
             ClIMiscellaneous.Creditsdata.Add("SGCLI");
             ClIMiscellaneous.Creditsdata.Add("DMC");
-            ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
+            ClIMiscellaneous.Creditsdata.Add("Sparcky Snowtail");
             CLISpecieList.List.Add("Human:Goa'uld:30:2:55:12:40:true:true:false:0:false:true:nauwada:true");
             CLISpecieList.List.Add("Human:Tok'ra:30:2:55:12:40:true:true:false:0:false:true:nauwada:true");
             CLISpecieList.List.Add("Asgard:Asgard:30:2:70:12:40:false:false:false:0:false:true:none:true");

@@ -1,7 +1,7 @@
 using System.Reflection;
 public class CLIFile
 {
-    public static string? DefaultPath { get; set; } //edit none to alex
+    public static string? DefaultPath { get; set; } 
     public static void load()
     {
         //detecif windiows or unix based system to know how to access files

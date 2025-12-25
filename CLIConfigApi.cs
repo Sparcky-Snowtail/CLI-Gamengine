@@ -12,7 +12,7 @@ public class CLIInt
         ClIMiscellaneous.Creditsdata.Add("MC");
         ClIMiscellaneous.Creditsdata.Add("====CLIGamengine====");
         ClIMiscellaneous.Creditsdata.Add("DMC");
-        ClIMiscellaneous.Creditsdata.Add("Sparcky Ancientpack");
+        ClIMiscellaneous.Creditsdata.Add("Sparcky Snowtail");
         ClIMiscellaneous.Creditsdata.Add("Pawos Howl");
         ClIMiscellaneous.checkelist();
         //dont edit top
@@ -44,6 +44,13 @@ public class CLIInt
 }
 public class CLIConfig
 {
+    //version Curant version:A.6.3
+    // this is used for save files
+    public static char majorVersion {get;} = 'A'; //for extrimly big chagess
+    public static bool majorVersionIgnore {get;} = false; // thermise if fileLoad will inore  majorVersion chages 
+    // by defult major verions are not campatble with difent majorVersions ex A.X.X wont be compatble with X.X.X
+    public static int version {get;} = 6; // for big chages
+    public static int minorVersion  {get;} = 3; // manly for paches but curenly ues for any edits to the code baise 
     public static void load()
     {
         CLISpace.input.Add("G:Milky Way:S:Sol:P:Earth:Mars");

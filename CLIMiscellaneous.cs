@@ -74,7 +74,7 @@ public class ClIMiscellaneous
         int x = ClIMiscellaneous.Creditsdata.Count;
         for (int i = 0; i < x; i++)
         {
-            if (ClIMiscellaneous.Creditsdata[i] == "Sparcky Ancientpack")
+            if (ClIMiscellaneous.Creditsdata[i] == "Sparcky Snowtail")
             {
                 A = true;
             }

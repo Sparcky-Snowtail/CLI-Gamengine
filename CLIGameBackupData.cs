@@ -5,7 +5,7 @@ public class CLIGameBackupData{
     private bool mainMenuOpen = true;
     private bool debug = false;
     private bool moddingIsOn = false;
-    private bool customLogoIsOn = false;
+    //private bool customLogoIsOn = false;
     private double bootlogo = 1;
     private ConsoleColor mcolor = ConsoleColor.Gray;
     private ConsoleColor dmcolor = ConsoleColor.DarkGray;
@@ -45,7 +45,7 @@ public class CLIGameBackupData{
         mainMenuOpen=CLISettings.mainMenuOpen;
         debug=CLISettings.Debug;
         moddingIsOn=CLISettings.moddingIsOn;
-        customLogoIsOn=CLISettings.customLogoIsOn;
+        //customLogoIsOn=CLISettings.customLogoIsOn;
         //bootlogo=CLISettings.Bootlogo;
         mcolor=CLISettings.Mcolor;
         dmcolor=CLISettings.Dmcolor;
@@ -88,7 +88,7 @@ public class CLIGameBackupData{
         CLISettings.mainMenuOpen=mainMenuOpen;
         CLISettings.Debug=debug;
         CLISettings.moddingIsOn=moddingIsOn;;
-        CLISettings.customLogoIsOn=customLogoIsOn;;
+        //CLISettings.customLogoIsOn=customLogoIsOn;;
         //CLISettings.Bootlogo=bootlogo;
         CLISettings.Mcolor=mcolor;
         CLISettings.Dmcolor=dmcolor;
